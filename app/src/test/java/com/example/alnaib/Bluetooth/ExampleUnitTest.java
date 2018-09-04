@@ -1,4 +1,4 @@
-package com.example.alnaib.maplocationdemo;
+package com.example.alnaib.Bluetooth;
 
 import org.junit.Test;
 

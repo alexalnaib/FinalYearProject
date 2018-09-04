@@ -1,4 +1,4 @@
-package com.example.alnaib.maplocationdemo;
+package com.example.alnaib.Bluetooth;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
@@ -18,8 +18,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;

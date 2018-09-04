@@ -1,4 +1,4 @@
-package com.example.alnaib.maplocationdemo;
+package com.example.alnaib.Bluetooth;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
