@@ -15,7 +15,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:id="@+id/btnONOFF"/>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Serial Comms"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/Serial"/>
     <Button
         android:text="Enable Discoverable"
         android:layout_width="wrap_content"

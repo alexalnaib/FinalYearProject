@@ -33,6 +33,7 @@ public class Bluetooth extends AppCompatActivity implements AdapterView.OnItemCl
 
     Button btnStartConnection;
     Button btnSend;
+    Button btnSerial;
 
     TextView incomingMessages;
     StringBuilder messages;
@@ -192,6 +193,7 @@ public class Bluetooth extends AppCompatActivity implements AdapterView.OnItemCl
         btnStartConnection = (Button) findViewById(R.id.btnStartConnection);
         btnSend = (Button) findViewById(R.id.btnSend);
         etSend = (EditText) findViewById(R.id.editText);
+        btnSerial = (Button)findViewById(R.id.Serial);
 
         incomingMessages = (TextView) findViewById(R.id.incomingMessage);
         messages = new StringBuilder();
@@ -232,6 +234,12 @@ public class Bluetooth extends AppCompatActivity implements AdapterView.OnItemCl
             }
         });
 
+        btnSerial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Bluetooth.this, BluetoothSerial.class));
+            }
+        });
     }
 
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
