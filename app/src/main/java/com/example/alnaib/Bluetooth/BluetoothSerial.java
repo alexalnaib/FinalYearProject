@@ -116,15 +116,18 @@ public class BluetoothSerial extends Activity
 
     void openBT() throws IOException
     {
-        UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //Standard SerialPortService ID
-        mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
-        mmSocket.connect();
-        mmOutputStream = mmSocket.getOutputStream();
-        mmInputStream = mmSocket.getInputStream();
+        if(mmDevice != null)
+        {
+            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //Standard SerialPortService ID
+            mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
+            mmSocket.connect();
+            mmOutputStream = mmSocket.getOutputStream();
+            mmInputStream = mmSocket.getInputStream();
 
-        beginListenForData();
+            beginListenForData();
 
-        myLabel.setText("Bluetooth Opened");
+            myLabel.setText("Bluetooth Opened");
+        }
     }
 
     void beginListenForData()
@@ -186,18 +189,24 @@ public class BluetoothSerial extends Activity
 
     void sendData() throws IOException
     {
-        String msg = myTextbox.getText().toString();
-        msg += "\n";
-        mmOutputStream.write(msg.getBytes());
-        myLabel.setText("Data Sent");
+        if(mmDevice != null)
+        {
+            String msg = myTextbox.getText().toString();
+            msg += "\n";
+            mmOutputStream.write(msg.getBytes());
+            myLabel.setText("Data Sent");
+        }
     }
 
     void closeBT() throws IOException
     {
-        stopWorker = true;
-        mmOutputStream.close();
-        mmInputStream.close();
-        mmSocket.close();
-        myLabel.setText("Bluetooth Closed");
+        if(mmDevice != null)
+        {
+            stopWorker = true;
+            mmOutputStream.close();
+            mmInputStream.close();
+            mmSocket.close();
+            myLabel.setText("Bluetooth Closed");
+        }
     }
 }
